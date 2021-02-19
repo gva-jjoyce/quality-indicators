@@ -2,18 +2,23 @@
 
 import sys
 import logging
-from app.maintainability import MaintainabilityTest
+from measures.maintainability import MaintainabilityTest
+from measures.currency import CurrencyTest
 
-logging.basicConfig(
-        level=logging.DEBUG,
-        format='%(asctime)s %(levelname)-8s %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger("measures")
+log_format = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
+log_handler = logging.StreamHandler()
+log_handler.setFormatter(log_format)
+logger.addHandler(log_handler)
+logger.setLevel(logging.DEBUG)
+
 
 results = []
 results.append(MaintainabilityTest().test())
+results.append(CurrencyTest().test())
 
 if not all(results):
-    logging.error('FAILURE')
+    logger.error('FAILURE')
     sys.exit(1)
 
-logging.info('PASS')
+logger.info('PASS')
