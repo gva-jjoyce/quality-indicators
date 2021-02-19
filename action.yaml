@@ -1,6 +1,6 @@
-name: 'Test Action'
-description: 'Does not do much'
-author: 'joocer'
+name: 'quality-indicators'
+description: 'a batch of simple quality measures'
+author: 'Justin Joyce'
 runs:
   using: "docker"
   image: "dockerfile"
