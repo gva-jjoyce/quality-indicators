@@ -128,7 +128,7 @@ class CurrencyTest():
             if package_result['state'] != 'OKAY':
                 logger.info(F"{package_result['package']:20}  {package_result['state']:10} found: {package_result['installed_version']:10} latest: {package_result['latest_version']}")
 
-        logger.info(F"CURRENCY: {results.count('VULNERABLE')} vulnerable, {results.count('STALE')} stale, {results.count('UNKNOWN')} unknown")
+        logger.info(F"CURRENCY: {results.count('VULNERABLE')} vulnerable, {results.count('STALE')} stale, {results.count('UNKNOWN')} unknown, {results.count('OKAY')} okay")
 
         total_results = len(results)
         if results.count('VULNERABLE') > 0:

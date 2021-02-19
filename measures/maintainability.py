@@ -18,7 +18,7 @@ import sys
 
 logger = logging.getLogger("measures")
 
-EXCLUSIONS = ['/tests/']
+EXCLUSIONS = ['./tests/']
 LIMIT = 65
 
 class MaintainabilityTest():
