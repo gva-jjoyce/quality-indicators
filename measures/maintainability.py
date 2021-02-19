@@ -53,4 +53,4 @@ class MaintainabilityTest():
 
         logger.info(F"MAINTAINABILITY INDEX: {results.count('PASSED')} passed, {results.count('FAILED')} failed, {results.count('SKIPPED')} skipped")
 
-        return results.count('FAILED') > 0
+        return results.count('FAILED') == 0

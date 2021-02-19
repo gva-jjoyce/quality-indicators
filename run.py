@@ -6,7 +6,7 @@ from measures.maintainability import MaintainabilityTest
 from measures.currency import CurrencyTest
 
 logger = logging.getLogger("measures")
-log_format = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s')
+log_format = logging.Formatter('%(asctime)s %(levelname)-8s %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
 log_handler = logging.StreamHandler()
 log_handler.setFormatter(log_format)
 logger.addHandler(log_handler)
