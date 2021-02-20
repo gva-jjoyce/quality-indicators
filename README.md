@@ -12,3 +12,27 @@ This is a simple composition analysis scanner for Python; it uses the manifest o
 
 **Quality Bar**: Less than 20% of components STALE  
 **Quality Bar**: 0 components with known weaknesses
+
+
+# Example Workflow
+~~~yaml
+name: integration_tests
+on: [push, pull_request]
+jobs:
+  quality_measures:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out
+        uses: actions/checkout@v2
+  
+      - name: set up
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8' 
+
+      - name: install component base requirements
+        run:  pip install -r $GITHUB_WORKSPACE/requirements.txt
+
+      - name: execute_action
+        uses: gva-jjoyce/quality-indicators@main
+~~~
