@@ -9,7 +9,7 @@ Files in /tests/ folder are excluded, as well as as there being an option to
 add a flag to the file to exclude specific files.
 
 Radon itself will A grade for maintainability for scores 100 to 20, this
-script sets the bar at 65.
+script sets the bar at 50.
 """
 import radon.metrics
 import logging
@@ -19,7 +19,7 @@ import sys
 logger = logging.getLogger("measures")
 
 EXCLUSIONS = ['./tests/']
-LIMIT = 65
+LIMIT = 50
 
 class MaintainabilityTest():
 
